@@ -33,5 +33,3 @@ sed -i "s/\[KCP_READBUFF\]/$KCP_READBUFF/g" /etc/v2ray/config.json
 sed -i "s/\[KCP_WRITEBUFF\]/$KCP_WRITEBUFF/g" /etc/v2ray/config.json
 
 cat /etc/v2ray/config.json
-
-/usr/bin/v2ray -config=/etc/v2ray/config.json
