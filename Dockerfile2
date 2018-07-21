@@ -8,6 +8,7 @@ ADD https://storage.googleapis.com/v2ray-docker/geoip.dat /usr/bin/v2ray/
 ADD https://storage.googleapis.com/v2ray-docker/geosite.dat /usr/bin/v2ray/
 
 COPY config.json2 /etc/v2ray/config.json
+COPY entrypoint.sh /usr/bin/entrypoint.sh
 
 RUN set -ex && \
     apk --no-cache add ca-certificates && \
