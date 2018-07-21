@@ -5,50 +5,50 @@
     "loglevel": "warning"
   },
   "inbound": {
-    "port": $VMESS_PORT,
+    "port": [VMESS_PORT],
     "protocol": "vmess",
     "settings": {
       "clients": [
         {
-          "id": "$VMESS_ID",
-          "level": $VMESS_LEVEL,
-          "alterId": $VMESS_ALTERID
+          "id": "[VMESS_ID]",
+          "level": [VMESS_LEVEL],
+          "alterId": [VMESS_ALTERID]
         }
       ]
     }
   },
   "inboundDetour": [
     {
-      "port": $SS_PORT,
+      "port": [SS_PORT],
       "protocol": "shadowsocks",
       "settings": {
-        "method": "$SS_METHOD",
-        "password": "$SS_PASSWORD",
+        "method": "[SS_METHOD]",
+        "password": "[SS_PASSWORD]",
         "network": "tcp,udp"
       }
     },
     {
-      "port": $KCP_PORT_VMESS,
+      "port": [KCP_PORT_VMESS],
       "protocol": "vmess",
       "settings": {
         "clients": [
           {
-            "id": "$VMESS_ID",
-            "level": $VMESS_LEVEL,
-            "alterId": $VMESS_ALTERID
+            "id": "[VMESS_ID]",
+            "level": [VMESS_LEVEL],
+            "alterId": [VMESS_ALTERID]
           }
         ]
       },
       "streamSettings": {
         "network": "kcp",
         "kcpSettings": {
-          "mtu": $KCP_MUT,
-          "tti": $KCP_TTI,
-          "uplinkCapacity": $KCP_UPLINK,
-          "downlinkCapacity": $KCP_DOWNLINK,
+          "mtu": [KCP_MUT],
+          "tti": [KCP_TTI],
+          "uplinkCapacity": [KCP_UPLINK],
+          "downlinkCapacity": [KCP_DOWNLINK],
           "congestion": false,
-          "readBufferSize": $KCP_READBUFF,
-          "writeBufferSize": $KCP_WRITEBUFF,
+          "readBufferSize": [KCP_READBUFF],
+          "writeBufferSize": [KCP_WRITEBUFF],
           "header": {
             "type": "none"
           }
