@@ -15,7 +15,3 @@ Enjoy your Docker-Linux Node !
 EOF
 
 echo "Start Success !"
-
-cat /etc/v2ray/config.json
-
-/usr/bin/v2ray -config=/etc/v2ray/config.json
