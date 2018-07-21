@@ -3,11 +3,14 @@ FROM alpine:3.8
 LABEL maintainer "wnxd <imiku@wnxd.me>"
 
 COPY config.json2 /etc/v2ray/config.json
-ADD entrypoint.sh /usr/bin/entrypoint.sh
+COPY entrypoint.sh /usr/bin/entrypoint.sh
 
 # ADD https://storage.googleapis.com/v2ray-docker/v2ray /usr/bin/v2ray/
 # ADD https://storage.googleapis.com/v2ray-docker/v2ctl /usr/bin/v2ray/
 # ADD https://storage.googleapis.com/v2ray-docker/geoip.dat /usr/bin/v2ray/
 # ADD https://storage.googleapis.com/v2ray-docker/geosite.dat /usr/bin/v2ray/
+
+RUN apk --no-cache upgrade && \
+    apk --no-cache add bash
 
 ENTRYPOINT [ "bash", "/usr/bin/entrypoint.sh" ]
