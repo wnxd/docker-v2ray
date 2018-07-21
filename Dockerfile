@@ -34,5 +34,10 @@ ENV KCP_DOWNLINK=100
 ENV KCP_READBUFF=1
 ENV KCP_WRITEBUFF=1
 
+EXPOSE ${SS_PORT}/tcp
+EXPOSE ${SS_PORT}/udp
+EXPOSE ${VMESS_PORT}/tcp
+EXPOSE ${KCP_PORT_VMESS}/udp
+
 ADD entrypoint.sh /usr/bin/entrypoint.sh
 ENTRYPOINT [ "bash", "/usr/bin/entrypoint.sh" ]
