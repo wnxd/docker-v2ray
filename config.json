@@ -1,0 +1,70 @@
+{
+  "log" : {
+    "access": "/var/log/v2ray/access.log",
+    "error": "/var/log/v2ray/error.log",
+    "loglevel": "warning"
+  },
+  "inbound": {
+    "port": $VMESS_PORT,
+    "protocol": "vmess",
+    "settings": {
+      "clients": [
+        {
+          "id": "$VMESS_ID",
+          "level": $VMESS_LEVEL,
+          "alterId": $VMESS_ALTERID
+        }
+      ]
+    }
+  },
+  "inboundDetour": [
+    {
+      "port": $SS_PORT,
+      "protocol": "shadowsocks",
+      "settings": {
+        "method": "$SS_METHOD",
+        "password": "$SS_PASSWORD",
+        "network": "tcp,udp"
+      }
+    },
+    {
+      "port": $KCP_PORT_VMESS,
+      "protocol": "vmess",
+      "settings": {
+        "clients": [
+          {
+            "id": "$VMESS_ID",
+            "level": $VMESS_LEVEL,
+            "alterId": $VMESS_ALTERID
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "kcp",
+        "kcpSettings": {
+          "mtu": $KCP_MUT,
+          "tti": $KCP_TTI,
+          "uplinkCapacity": $KCP_UPLINK,
+          "downlinkCapacity": $KCP_DOWNLINK,
+          "congestion": false,
+          "readBufferSize": $KCP_READBUFF,
+          "writeBufferSize": $KCP_WRITEBUFF,
+          "header": {
+            "type": "none"
+          }
+        }
+      }
+    }
+  ],
+  "outbound": {
+    "protocol": "freedom",
+    "settings": {}
+  },
+  "outboundDetour": [
+    {
+      "protocol": "blackhole",
+      "settings": {},
+      "tag": "blocked"
+    }
+  ]
+}
