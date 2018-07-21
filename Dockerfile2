@@ -3,7 +3,7 @@ FROM alpine:latest
 LABEL maintainer "wnxd <imiku@wnxd.me>"
 
 COPY config.json2 /etc/v2ray/config.json
-COPY entrypoint.sh /usr/bin/entrypoint.sh
+ADD entrypoint.sh /usr/bin/entrypoint.sh
 
 # ADD https://storage.googleapis.com/v2ray-docker/v2ray /usr/bin/v2ray/
 # ADD https://storage.googleapis.com/v2ray-docker/v2ctl /usr/bin/v2ray/
