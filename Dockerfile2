@@ -11,6 +11,7 @@ COPY entrypoint.sh /usr/bin/entrypoint.sh
 # ADD https://storage.googleapis.com/v2ray-docker/geosite.dat /usr/bin/v2ray/
 
 RUN apk --no-cache upgrade && \
-    apk --no-cache add bash
+    apk --no-cache add bash && \
+    rm -rf /var/cache/apk/*
 
 ENTRYPOINT [ "bash", "/usr/bin/entrypoint.sh" ]
