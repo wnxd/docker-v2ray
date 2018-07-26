@@ -21,8 +21,8 @@
 | :------------- | -----------------------------------: |
 | KCP_PORT_VMESS |                                 8992 |
 | KCP_MUT        |                                 1350 |
-| KCP_TTI        |                                   20 |
+| KCP_TTI        |                                   50 |
 | KCP_UPLINK     |                                    5 |
-| KCP_DOWNLINK   |                                  100 |
-| KCP_READBUFF   |                                    1 |
-| KCP_WRITEBUFF  |                                    1 |
+| KCP_DOWNLINK   |                                   20 |
+| KCP_READBUFF   |                                    2 |
+| KCP_WRITEBUFF  |                                    2 |
