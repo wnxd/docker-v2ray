@@ -2,24 +2,24 @@
 
 | Item           |                                Value |
 | :------------- | -----------------------------------: |
-| SS_PORT        |                                 8989 |
+| SS_PORT        |                                 8888 |
 | SS_PASSWORD    |                                 wnxd |
-| SS_METHOD      |                          aes-256-cfb |
+| SS_METHOD      |                          aes-256-gcm |
 
 ## Vmess Config
 
 | Item           |                                Value |
 | :------------- | -----------------------------------: |
-| VMESS_PORT     |                                 8991 |
+| VMESS_PORT     |                                 9999 |
 | VMESS_ID       | 00000000-0000-0000-0000-000000000000 |
 | VMESS_LEVEL    |                                    1 |
-| VMESS_ALTERID  |                                   64 |
+| VMESS_ALTERID  |                                   10 |
 
 ## Kcp Config
 
 | Item           |                                Value |
 | :------------- | -----------------------------------: |
-| KCP_PORT_VMESS |                                 8992 |
+| KCP_PORT_VMESS |                                 9999 |
 | KCP_MUT        |                                 1350 |
 | KCP_TTI        |                                   50 |
 | KCP_UPLINK     |                                    5 |
