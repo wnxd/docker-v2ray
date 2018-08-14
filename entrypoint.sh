@@ -15,6 +15,8 @@ Enjoy your Docker-Linux Node !
 
 EOF
 
+echo "root:$ROOT_PASSWORD" | chpasswd
+
 echo "Start Success !"
 
 sed -i "s/\[SS_PORT\]/$SS_PORT/g" /etc/v2ray/config.json
@@ -34,4 +36,6 @@ sed -i "s/\[KCP_WRITEBUFF\]/$KCP_WRITEBUFF/g" /etc/v2ray/config.json
 
 cat /etc/v2ray/config.json
 
-/usr/bin/v2ray/v2ray -config=/etc/v2ray/config.json
+(/usr/bin/v2ray/v2ray -config=/etc/v2ray/config.json) &
+
+/usr/sbin/sshd -D -e -o PermitRootLogin=yes
