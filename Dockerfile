@@ -12,10 +12,15 @@ COPY entrypoint.sh /usr/bin/entrypoint.sh
 RUN set -ex && \
     apk --no-cache upgrade && \
     apk --no-cache add bash && \
-    apk --no-cache add ca-certificates && \
+    apk --no-cache add \
+        ca-certificates \
+        openssh-server && \
+    ssh-keygen -A && \
     mkdir /var/log/v2ray/ &&\
     chmod +x /usr/bin/v2ray/v2ctl && \
     chmod +x /usr/bin/v2ray/v2ray
+
+ENV ROOT_PASSWORD=alpine
 
 # SS
 ENV SS_PORT=8888
