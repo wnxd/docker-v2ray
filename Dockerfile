@@ -14,7 +14,8 @@ RUN set -ex && \
     apk --no-cache add bash && \
     apk --no-cache add \
         ca-certificates \
-        openssh-server && \
+        openssh-server \
+        mosh && \
     ssh-keygen -A && \
     mkdir /var/log/v2ray/ &&\
     chmod +x /usr/bin/v2ray/v2ctl && \
@@ -42,6 +43,8 @@ ENV KCP_DOWNLINK=20
 ENV KCP_READBUFF=2
 ENV KCP_WRITEBUFF=2
 
+EXPOSE 22/tcp
+EXPOSE 60001/udp
 EXPOSE ${SS_PORT}/tcp
 EXPOSE ${SS_PORT}/udp
 EXPOSE ${VMESS_PORT}/tcp
