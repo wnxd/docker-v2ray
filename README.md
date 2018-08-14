@@ -1,3 +1,13 @@
+## Server Config
+| Item           |                                Value |
+| :------------- | -----------------------------------: |
+| ROOT_PASSWORD  |                               alpine |
+
+## Mosh Config
+| Item           |                                Value |
+| :------------- | -----------------------------------: |
+| MOSH_PORT      |                                11111 |
+
 ## Shadowsocks Config
 
 | Item           |                                Value |
