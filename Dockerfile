@@ -14,15 +14,15 @@ RUN set -ex && \
     apk --no-cache add bash && \
     apk --no-cache add \
         ca-certificates \
-        mosh && \
+        openssh-server && \
     mkdir /var/log/v2ray/ &&\
     chmod +x /usr/bin/v2ray/v2ctl && \
     chmod +x /usr/bin/v2ray/v2ray
 
 ENV ROOT_PASSWORD=alpine
 
-# mosh
-ENV MOSH_PORT=11111
+# ssh
+ENV SSH_PORT=7777
 
 # ss
 ENV SS_PORT=8888
@@ -44,7 +44,7 @@ ENV KCP_DOWNLINK=20
 ENV KCP_READBUFF=2
 ENV KCP_WRITEBUFF=2
 
-EXPOSE ${MOSH_PORT}/udp
+EXPOSE ${SSH_PORT}/tcp
 EXPOSE ${SS_PORT}/tcp
 EXPOSE ${SS_PORT}/udp
 EXPOSE ${VMESS_PORT}/tcp
