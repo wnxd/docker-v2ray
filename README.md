@@ -1,16 +1,16 @@
 # Global
 
-## Server Config
+### Server Config
 | Item                 |                                Value |
 | :------------------- | -----------------------------------: |
 | ROOT_PASSWORD        |                               alpine |
 
-## Ssh Config
+### Ssh Config
 | Item                 |                                Value |
 | :------------------- | -----------------------------------: |
 | SSH_PORT             |                                 7777 |
 
-## Shadowsocks Config
+### Shadowsocks Config
 
 | Item                 |                                Value |
 | :------------------- | -----------------------------------: |
@@ -18,7 +18,7 @@
 | SS_PASSWORD          |                                 wnxd |
 | SS_METHOD            |                          aes-256-gcm |
 
-## Vmess Config
+### Vmess Config
 
 | Item                 |                                Value |
 | :------------------- | -----------------------------------: |
@@ -27,7 +27,7 @@
 | VMESS_LEVEL          |                                    1 |
 | VMESS_ALTERID        |                                   10 |
 
-## Kcp Config
+### Kcp Config
 
 | Item                 |                                Value |
 | :------------------- | -----------------------------------: |
