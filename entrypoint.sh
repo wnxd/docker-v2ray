@@ -36,6 +36,8 @@ sed -i "s/\[KCP_WRITEBUFF\]/$KCP_WRITEBUFF/g" /etc/v2ray/config.json
 
 cat /etc/v2ray/config.json
 
-mosh-server -p $MOSH_PORT
+(/usr/sbin/sshd -D -e \
+                -o PermitRootLogin=yes \
+                -o Port=$SSH_PORT) &
 
 /usr/bin/v2ray/v2ray -config=/etc/v2ray/config.json
