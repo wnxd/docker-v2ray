@@ -1,4 +1,4 @@
-### Global
+# Global
 
 ## Server Config
 | Item                 |                                Value |
@@ -39,7 +39,7 @@
 | KCP_READBUFF         |                                    2 |
 | KCP_WRITEBUFF        |                                    2 |
 
-### Relay
+# Relay
 
 | Item                 |                                Value |
 | :------------------- | -----------------------------------: |
