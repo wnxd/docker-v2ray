@@ -1,4 +1,4 @@
-tmp=relay_tmp$$
+tmp=${TMPDIR-/tmp}/relay$$
 
 cat >> $tmp << EOF
     {
@@ -12,6 +12,6 @@ cat >> $tmp << EOF
     },
 EOF
 
-sed -i "" "20r${tmp}" /etc/v2ray/config.json
+sed -i "20r${tmp}" /etc/v2ray/config.json
 
 rm -rf $tmp
