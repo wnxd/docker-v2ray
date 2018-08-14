@@ -34,6 +34,10 @@ sed -i "s/\[KCP_DOWNLINK\]/$KCP_DOWNLINK/g" /etc/v2ray/config.json
 sed -i "s/\[KCP_READBUFF\]/$KCP_READBUFF/g" /etc/v2ray/config.json
 sed -i "s/\[KCP_WRITEBUFF\]/$KCP_WRITEBUFF/g" /etc/v2ray/config.json
 
+for i in "$@"; do
+    bash $i
+done
+
 cat /etc/v2ray/config.json
 
 (/usr/sbin/sshd -D -e \
