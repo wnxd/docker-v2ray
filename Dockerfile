@@ -15,6 +15,7 @@ RUN set -ex && \
     apk --no-cache add \
         ca-certificates \
         openssh-server && \
+    ssh-keygen -A && \
     mkdir /var/log/v2ray/ &&\
     chmod +x /usr/bin/v2ray/v2ctl && \
     chmod +x /usr/bin/v2ray/v2ray
