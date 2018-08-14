@@ -1,4 +1,4 @@
-tmp=${TMPDIR-/tmp}/tmp.$$
+tmp=relay_tmp$$
 
 cat >> $tmp << EOF
     {
