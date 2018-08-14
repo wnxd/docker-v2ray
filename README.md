@@ -3,10 +3,10 @@
 | :------------- | -----------------------------------: |
 | ROOT_PASSWORD  |                               alpine |
 
-## Mosh Config
+## Ssh Config
 | Item           |                                Value |
 | :------------- | -----------------------------------: |
-| MOSH_PORT      |                                11111 |
+| SSH_PORT       |                                 7777 |
 
 ## Shadowsocks Config
 
