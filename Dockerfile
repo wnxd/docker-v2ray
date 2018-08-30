@@ -1,6 +1,5 @@
-LABEL MAINTAINER="wnxd <imiku@wnxd.me>"
-
 FROM golang:latest as builder
+LABEL MAINTAINER="wnxd <imiku@wnxd.me>"
 
 RUN go get -u v2ray.com/core/...
 RUN go get -u v2ray.com/ext/...
