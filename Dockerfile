@@ -14,13 +14,13 @@ COPY entrypoint.sh /usr/bin/entrypoint.sh
 
 RUN set -ex && \
     apk --no-cache upgrade && \
-    apk --no-cache add bash && \
     apk --no-cache add \
+        bash \
         ca-certificates \
         openssh-server && \
     rm -rf /var/cache/apk/* && \
     ssh-keygen -A && \
-    mkdir /var/log/v2ray/ &&\
+    mkdir /var/log/v2ray/
 
 ENV ROOT_PASSWORD=alpine
 
