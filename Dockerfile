@@ -1,11 +1,15 @@
-FROM alpine:latest
 LABEL MAINTAINER="wnxd <imiku@wnxd.me>"
 
-ADD https://storage.googleapis.com/v2ray-docker/v2ray /usr/bin/v2ray/
-ADD https://storage.googleapis.com/v2ray-docker/v2ctl /usr/bin/v2ray/
-ADD https://storage.googleapis.com/v2ray-docker/geoip.dat /usr/bin/v2ray/
-ADD https://storage.googleapis.com/v2ray-docker/geosite.dat /usr/bin/v2ray/
+FROM golang:latest as builder
 
+RUN go get -u v2ray.com/core/...
+RUN go get -u v2ray.com/ext/...
+RUN go install v2ray.com/ext/tools/build/vbuild
+RUN vbuild -dir /usr/bin/v2ray
+
+FROM alpine:latest
+
+COPY --from=builder /usr/bin/v2ray /usr/bin/v2ray
 COPY config.json /etc/v2ray/config.json
 COPY entrypoint.sh /usr/bin/entrypoint.sh
 
@@ -15,10 +19,9 @@ RUN set -ex && \
     apk --no-cache add \
         ca-certificates \
         openssh-server && \
+    rm -rf /var/cache/apk/* && \
     ssh-keygen -A && \
     mkdir /var/log/v2ray/ &&\
-    chmod +x /usr/bin/v2ray/v2ctl && \
-    chmod +x /usr/bin/v2ray/v2ray
 
 ENV ROOT_PASSWORD=alpine
 
