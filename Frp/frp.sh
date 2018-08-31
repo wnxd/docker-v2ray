@@ -22,4 +22,6 @@ while [ ! -z "${!extra}"]; do
     extra=FRP_CLIENT_INFO_${i}
 done
 
+cat $frpc
+
 (/usr/bin/frpc -c /etc/frp/frpc.ini) &
