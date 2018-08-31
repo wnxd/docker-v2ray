@@ -14,6 +14,7 @@ EOF
 
 sed -i "s/\[FRP_SERVER_ADDRESS\]/${FRP_SERVER_ADDRESS}/g" $frpc
 sed -i "s/\[FRP_SERVER_PORT\]/${FRP_SERVER_PORT}/g" $frpc
+sed -i "s/\[FRP_SERVER_TOKEN\]/${FRP_SERVER_TOKEN}/g" $frpc
 
 arr=${FRP_CLIENT_INFO//\|/ }
 appendFrp 1 ${arr[@]}
