@@ -12,12 +12,14 @@ EOF
 }
 
 sed -i "s/\[FRP_SERVER_ADDRESS\]/${SS_PORT}/g" $frpc
-appendFrp (${FRP_CLIENT_INFO//\|/ })
+arr=${FRP_CLIENT_INFO//\|/ }
+appendFrp ${arr[@]}
 
 i=2
 extra=FRP_CLIENT_INFO_${i}
 while [ ! -z "${!extra}"]; do
-    appendFrp (${!extra//\|/ })
+    arr=${!extra//\|/ }
+    appendFrp ${arr[@]}
     i++
     extra=FRP_CLIENT_INFO_${i}
 done
