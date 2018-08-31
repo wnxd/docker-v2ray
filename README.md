@@ -47,3 +47,13 @@
 | RELAY_PORT           |                                11111 |
 | RELAY_TARGET_ADDRESS |                              0.0.0.0 |
 | RELAY_TARGET_PORT    |                                    0 |
+
+# Frp (:frp)
+
+| Item                 |                                Value |
+| :------------------- | -----------------------------------: |
+| FRP_SERVER_ADDRESS   |                              0.0.0.0 |
+| FRP_SERVER_PORT      |                                    0 |
+| FRP_CLIENT_INFO      |            tcp|127.0.0.1|$SSH_PORT|0 |
+| FRP_CLIENT_INFO_2    | TYPE|LOCAL_IP|LOCAL_PORT|REMOTE_PORT |
+| FRP_CLIENT_INFO_...  |                                  ... |
