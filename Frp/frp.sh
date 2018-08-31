@@ -2,7 +2,7 @@ frpc=/etc/frp/frpc.ini
 
 appendFrp()
 {
-    cat > $frpc << EOF
+    cat >> $frpc << EOF
     [range:frp_port]
     type = ${1}
     local_ip = ${2}
