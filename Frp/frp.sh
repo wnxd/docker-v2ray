@@ -17,7 +17,7 @@ appendFrp ${arr[@]}
 
 i=2
 extra=FRP_CLIENT_INFO_${i}
-while [ ! -z "${!extra}"]; do
+while [ [ ! -z "${!extra}"] ]; do
     arr=${!extra//\|/ }
     appendFrp ${arr[@]}
     i++
