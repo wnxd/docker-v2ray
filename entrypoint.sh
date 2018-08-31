@@ -1,7 +1,7 @@
 #!/bin/bash
 
 rm -f /etc/motd
-cat >> /etc/motd << EOF
+cat >>/etc/motd <<EOF
 
 Author : wnxd <imiku@wnxd.me>
 Project : https://hub.docker.com/r/wnxd/docker-v2ray/
@@ -35,13 +35,13 @@ sed -i "s/\[KCP_READBUFF\]/${KCP_READBUFF}/g" /etc/v2ray/config.json
 sed -i "s/\[KCP_WRITEBUFF\]/${KCP_WRITEBUFF}/g" /etc/v2ray/config.json
 
 for i in "$@"; do
-    bash $i
+	bash $i
 done
 
 cat /etc/v2ray/config.json
 
 (/usr/sbin/sshd -D -e \
-                -o PermitRootLogin=yes \
-                -o Port=${SSH_PORT}) &
+	-o PermitRootLogin=yes \
+	-o Port=${SSH_PORT}) &
 
 /usr/bin/v2ray/v2ray -config=/etc/v2ray/config.json
