@@ -4,10 +4,10 @@ appendFrp()
 {
     cat > $frpc << EOF
     [range:frp_port]
-    type = \${1}
-    local_ip = \${2}
-    local_port = \${3}
-    remote_port = \${4}
+    type = ${1}
+    local_ip = ${2}
+    local_port = ${3}
+    remote_port = ${4}
     EOF
 }
 
