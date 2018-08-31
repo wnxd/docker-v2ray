@@ -54,6 +54,7 @@
 | :------------------- | --------------------------------------------------: |
 | FRP_SERVER_ADDRESS   |                                             0.0.0.0 |
 | FRP_SERVER_PORT      |                                                   0 |
+| FRP_SERVER_TOKEN     |                                                wnxd |
 | FRP_CLIENT_INFO      |            tcp&#x7C;127.0.0.1&#x7C;$SSH_PORT&#x7C;0 |
 | FRP_CLIENT_INFO_2    | TYPE&#x7C;LOCAL_IP&#x7C;LOCAL_PORT&#x7C;REMOTE_PORT |
 | FRP_CLIENT_INFO_...  |                                                 ... |
