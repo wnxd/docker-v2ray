@@ -1,6 +1,6 @@
 tmp=${TMPDIR-/tmp}/relay$$
 
-cat >> $tmp << EOF
+cat > $tmp << EOF
     {
       "port": ${RELAY_PORT},
       "protocol": "dokodemo-door",
