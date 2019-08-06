@@ -1,9 +1,10 @@
 frpc=/etc/frp/frpc.ini
+nodename=$(uname -n)
 
 appendFrp() {
 	cat >>$frpc <<EOF
 
-[range:frp_port${1}]
+[range:${nodename}_port${1}]
 type = ${2}
 local_ip = ${3}
 local_port = ${4}
