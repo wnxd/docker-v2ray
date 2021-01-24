@@ -1,10 +1,11 @@
 FROM golang:latest as builder
 LABEL MAINTAINER="wnxd <imiku@wnxd.me>"
 
-RUN go get -u v2ray.com/core/...
-RUN go get -u v2ray.com/ext/...
-RUN go install v2ray.com/ext/tools/build/vbuild
-RUN vbuild -dir /usr/bin/v2ray
+RUN go get -u github.com/v2fly/v2ray-core/...
+WORKDIR /go/src/github.com/v2fly/v2ray-core
+# RUN go mod download
+RUN go build -o /usr/bin/v2ray/v2ray -trimpath -ldflags "-s -w -buildid=" ./main
+# RUN go build -o /usr/bin/v2ray/v2ctl -trimpath -ldflags "-s -w -buildid=" -tags confonly ./infra/control/main
 
 FROM alpine:latest
 
