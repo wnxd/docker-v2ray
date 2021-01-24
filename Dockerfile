@@ -6,8 +6,7 @@ RUN git clone https://github.com/v2fly/v2ray-core.git
 RUN cd v2ray-core && \
     # go env -w GOPROXY=https://goproxy.io,direct && \
     go mod download && \
-    go build -o /usr/bin/v2ray/v2ray -trimpath -ldflags "-s -w -buildid=" ./main
-# RUN go build -o /usr/bin/v2ray/v2ctl -trimpath -ldflags "-s -w -buildid=" -tags confonly ./infra/control/main
+    CGO_ENABLED=0 go build -o /usr/bin/v2ray/v2ray -trimpath -ldflags "-s -w -buildid=" ./main
 
 FROM alpine:latest
 
