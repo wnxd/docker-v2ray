@@ -7,7 +7,7 @@ Author : wnxd <imiku@wnxd.me>
 Project : https://hub.docker.com/r/wnxd/docker-v2ray/
 Docker Image : wnxd/docker-v2ray
 
-Linux Version : $(cat /etc/os-release)
+Linux Version : $(source /etc/os-release && echo $PRETTY_NAME)
 Kernel Version : $(uname -r)
 Hostname : $(uname -n)
 
